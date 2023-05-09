@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ExpenseManagerDbContext))]
-    [Migration("20230509152914_init1")]
+    [Migration("20230509172818_init1")]
     partial class init1
     {
         /// <inheritdoc />
@@ -95,9 +95,12 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserName")
+                        .IsUnique();
 
                     b.ToTable("FamilyMembers");
                 });

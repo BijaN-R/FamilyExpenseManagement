@@ -14,12 +14,29 @@ namespace DataAccess.Repositories
             _context = context;
         }
 
-        public async Task<BankAccounts> AddAsync(BankAccounts accounts)
+        public async Task<BankAccounts> AddAsync(BankAccounts account)
         {
-            await _context.BankAccounts.AddAsync(accounts);
+            await _context.BankAccounts.AddAsync(account);
             await _context.SaveChangesAsync();
 
-            return accounts;
+            return account;
+        }
+
+        public async Task<List<BankAccounts>> GetAll()
+        {
+            return await _context.BankAccounts.ToListAsync();
+        }
+
+        public async Task<BankAccounts> GetById(int id)
+        {
+            return await _context.BankAccounts.FirstOrDefaultAsync(b => b.Id == id);
+        }
+
+        public async Task<BankAccounts> UpdateAsync(BankAccounts account)
+        {
+            var result = _context.BankAccounts.Update(account).Entity;
+            await _context.SaveChangesAsync();
+            return result;
         }
     }
 }

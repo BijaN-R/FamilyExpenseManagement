@@ -29,5 +29,25 @@ namespace Application.Services
 
             return _mapper.Map<BankAccountResponseDto>(response);
         }
+
+        public async Task<BankAccountResponseDto> GetAccountById(int id)
+        {
+            var result = new BankAccountResponseDto();
+            result = _mapper.Map<BankAccountResponseDto>(await _repository.GetById(id));
+            return result;
+        }
+
+        public async Task<List<BankAccountResponseDto>> GetAllAccounts()
+        {
+            var result = await _repository.GetAll();
+            return _mapper.Map<List<BankAccountResponseDto>>(result);
+        }
+
+        public async Task<BankAccountResponseDto> UpdateAccount(BankAccountDto account)
+        {
+            var model = _mapper.Map<BankAccounts>(account);
+            var result = await _repository.UpdateAsync(model);
+            return _mapper.Map<BankAccountResponseDto>(result);
+        }
     }
 }
