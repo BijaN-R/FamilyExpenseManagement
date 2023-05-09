@@ -13,7 +13,7 @@ namespace DataAccess.Repositories
             _context = context;
         }
 
-        public async Task<FamilyMembers> GetByIdAsync(Guid id)
+        public async Task<FamilyMembers> GetByIdAsync(int id)
         {
             return await _context.FamilyMembers.FindAsync(id);
         }

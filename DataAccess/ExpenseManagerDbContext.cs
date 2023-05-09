@@ -14,7 +14,7 @@ namespace DataAccess
         public DbSet<BankAccounts> BankAccounts { get; set; }
         public DbSet<FamilyMembers> FamilyMembers { get; set; }
         public DbSet<Transactions> Transactions { get; set; }
-        public DbSet<TransActionCategories> TransActionCategories { get; set; }
+        public DbSet<TransActionCategories> TransactionCategories { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

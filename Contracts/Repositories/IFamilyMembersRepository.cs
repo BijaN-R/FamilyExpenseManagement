@@ -4,7 +4,7 @@ namespace Contracts.Repositories
 {
     public interface IFamilyMembersRepository
     {
-        Task<FamilyMembers> GetByIdAsync(Guid id);
+        Task<FamilyMembers> GetByIdAsync(int id);
         Task<FamilyMembers> GetByUsernameAndPassword(string username, string passwrod);
         Task<List<FamilyMembers>> GetAllAsync();
         Task<int> AddAsync(FamilyMembers entity);
