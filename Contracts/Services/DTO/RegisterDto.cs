@@ -1,6 +1,6 @@
 ﻿using Utilities.Enums;
 
-namespace Application.DTO
+namespace Contracts.Services.DTO
 {
     public class RegisterDto
     {

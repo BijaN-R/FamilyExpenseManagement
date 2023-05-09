@@ -1,8 +1,8 @@
 using Application.Services;
-using Application.Services.Contracts;
+using Contracts.Repositories;
+using Contracts.Services;
 using DataAccess;
 using DataAccess.Repositories;
-using DataAccess.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 

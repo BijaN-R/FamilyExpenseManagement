@@ -1,6 +1,6 @@
 ﻿using Domains;
 
-namespace DataAccess.Repositories.Contracts
+namespace Contracts.Repositories
 {
     public interface IFamilyMembersRepository
     {

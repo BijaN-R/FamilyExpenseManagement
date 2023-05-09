@@ -1,12 +1,7 @@
-﻿using Application.DTO;
-using Application.Services.Contracts;
-using DataAccess.Repositories.Contracts;
+﻿using Contracts.Repositories;
+using Contracts.Services;
+using Contracts.Services.DTO;
 using Domains;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Utilities.Extensions;
 
 namespace Application.Services

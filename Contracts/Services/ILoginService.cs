@@ -1,6 +1,6 @@
-﻿using Application.DTO;
+﻿using Contracts.Services.DTO;
 
-namespace Application.Services.Contracts
+namespace Contracts.Services
 {
     public interface ILoginService
     {
