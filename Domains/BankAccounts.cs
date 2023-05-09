@@ -1,11 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Domains
+﻿namespace Domains
 {
     public class BankAccounts : BaseModel
     {
-        [Required]
         public string BankName { get; set; }
         public string AccountNo { get; set; }
+        public List<Transactions> Transactions { get; set; }
     }
 }

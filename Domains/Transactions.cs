@@ -1,19 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Utilities.Enums;
+﻿using Utilities.Enums;
 
 namespace Domains
 {
     public class Transactions : BaseModel<Guid>
     {
-        [Required]
         public TransactionTypes TransactionType { get; set; }
-        [Required]
         public int Amount { get; set; }
-        [Required]
         public string Title { get; set; }
         public string Description { get; set; }
+        public int CategoryId { get; set; }
+        public int BankAccountId { get; set; }
+        public int FamilyMemberId { get; set; }
         public TransactionCategories Category { get; set; }
-        public BankAccounts Account { get; set; }
-        public FamilyMembers Transactor { get; set; }
+        public BankAccounts BankAccount { get; set; }
+        public FamilyMembers FamilyMember { get; set; }
     }
 }

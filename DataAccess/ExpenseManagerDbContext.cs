@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 using Domains;
+using DataAccess.Configuration;
 
 namespace DataAccess
 {
@@ -20,17 +20,10 @@ namespace DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.UseCollation("Persian_100_CI_AS");
+            modelBuilder.ApplyConfiguration(new FamilyMembersConfiguration());
+            modelBuilder.ApplyConfiguration(new BankAccountsConfiguration());
+            modelBuilder.ApplyConfiguration(new TransactionCategoriesConfiguration());
             base.OnModelCreating(modelBuilder);
         }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //        optionsBuilder.LogTo(msg => Debug.WriteLine(msg)).EnableSensitiveDataLogging();
-
-        //        optionsBuilder.UseSqlServer(AppSettings.ConnectionString);
-        //    }
-        //}
     }
 }
