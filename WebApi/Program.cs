@@ -2,6 +2,7 @@ using Application.Services;
 using Contracts.Repositories;
 using Contracts.Services;
 using DataAccess;
+using DataAccess.AutoMapper;
 using DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -24,7 +25,11 @@ builder.Services.AddDbContext<ExpenseManagerDbContext>(options =>
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IFamilyMembersRepository, FamilyMembersRepository>();
+builder.Services.AddScoped<IBankAccountRepository, BankAccountRepository>();
 builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<IBankAccountService, BankAccountService>();
+
+builder.Services.AddAutoMapper(typeof(BankAccountProfile));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

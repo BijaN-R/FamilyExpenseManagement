@@ -1,6 +1,6 @@
 ﻿namespace Domains
 {
-    public class Accounts : BaseModel
+    public class BankAccounts : BaseModel
     {
         public string BankName { get; set; }
         public string AccountNo { get; set; }

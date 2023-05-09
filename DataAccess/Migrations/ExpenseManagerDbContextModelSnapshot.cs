@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ExpenseManagerDbContext))]
-    partial class CommandDbModelSnapshot : ModelSnapshot
+    partial class ExpenseManagerDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domains.Accounts", b =>
+            modelBuilder.Entity("Domains.BankAccounts", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -47,7 +47,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Accounts");
+                    b.ToTable("BankAccounts");
                 });
 
             modelBuilder.Entity("Domains.FamilyMembers", b =>
@@ -177,7 +177,7 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Domains.Transactions", b =>
                 {
-                    b.HasOne("Domains.Accounts", "Account")
+                    b.HasOne("Domains.BankAccounts", "Account")
                         .WithMany()
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -11,7 +11,7 @@ namespace DataAccess
         }
 
 
-        public DbSet<Accounts> Accounts { get; set; }
+        public DbSet<BankAccounts> BankAccounts { get; set; }
         public DbSet<FamilyMembers> FamilyMembers { get; set; }
         public DbSet<Transactions> Transactions { get; set; }
         public DbSet<TransActionCategories> TransActionCategories { get; set; }

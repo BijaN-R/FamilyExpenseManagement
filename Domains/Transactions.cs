@@ -9,7 +9,7 @@ namespace Domains
         public string Title { get; set; }
         public string Description { get; set; }
         public TransActionCategories Category { get; set; }
-        public Accounts Account { get; set; }
+        public BankAccounts Account { get; set; }
         public FamilyMembers Transactor { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Contracts.Services;
-using Contracts.Services.DTO;
+using Contracts.Services.DTO.FamilyMembers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers

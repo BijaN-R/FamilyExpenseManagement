@@ -1,4 +1,4 @@
-﻿using Contracts.Services.DTO;
+﻿using Contracts.Services.DTO.FamilyMembers;
 
 namespace Contracts.Services
 {

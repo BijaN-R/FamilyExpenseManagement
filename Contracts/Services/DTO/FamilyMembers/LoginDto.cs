@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Contracts.Services.DTO
+namespace Contracts.Services.DTO.FamilyMembers
 {
     public class LoginDto
     {

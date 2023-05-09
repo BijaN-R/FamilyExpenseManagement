@@ -1,6 +1,6 @@
 ﻿using Contracts.Repositories;
 using Contracts.Services;
-using Contracts.Services.DTO;
+using Contracts.Services.DTO.FamilyMembers;
 using Domains;
 using Utilities.Extensions;
 
