@@ -6,5 +6,6 @@ namespace Contracts.Services
     {
         Task<LoginResponseDto> Login(LoginDto model);
         Task<RegisterResponseDto> Register(RegisterDto model);
+        Task<List<MemberDto>> GetAll();
     }
 }

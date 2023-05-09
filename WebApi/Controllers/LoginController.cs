@@ -43,5 +43,17 @@ namespace WebApi.Controllers
 
             return BadRequest(new { message = "Invalid username or password." });
         }
+
+        [HttpGet("/get-all-members")]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await _service.GetAll();
+            if (result.Any())
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(new { message = "No member has been found!" });
+        }
     }
 }

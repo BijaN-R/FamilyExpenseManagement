@@ -15,6 +15,25 @@ namespace Application.Services
             _repository = repository;
         }
 
+        public async Task<List<MemberDto>> GetAll()
+        {
+            var result = new List<MemberDto>();
+            var members = await _repository.GetAllAsync();
+
+            members.ForEach(m =>
+               {
+                   result.Add(new MemberDto(m.UserName,
+                                            m.FirstName,
+                                            m.LastName,
+                                            m.Email,
+                                            m.BirthDate,
+                                            m.RelationToHeadOfHousehold.ToString(),
+                                            m.PhoneNo));
+               });
+
+            return result;
+        }
+
         public async Task<LoginResponseDto> Login(LoginDto model)
         {
             var result = new LoginResponseDto();
