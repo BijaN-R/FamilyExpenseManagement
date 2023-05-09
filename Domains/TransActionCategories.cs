@@ -4,7 +4,7 @@ using Utilities.Enums;
 
 namespace Domains
 {
-    public class TransActionCategories : BaseModel
+    public class TransactionCategories : BaseModel
     {
         public TransactionTypes TransactionType { get; set; }
         [Required]

@@ -13,30 +13,30 @@ namespace DataAccess.Repositories
             _context = context;
         }
 
-        public async Task<TransActionCategories> AddAsync(TransActionCategories category)
+        public async Task<TransactionCategories> AddAsync(TransactionCategories category)
         {
             await _context.AddAsync(category);
             await _context.SaveChangesAsync();
             return category;
         }
 
-        public async Task<List<TransActionCategories>> GetAllAsync()
+        public async Task<List<TransactionCategories>> GetAllAsync()
         {
             return await _context.TransactionCategories.ToListAsync();
         }
 
-        public async Task<TransActionCategories> GetByIdAsync(int id)
+        public async Task<TransactionCategories> GetByIdAsync(int id)
         {
             return await _context.TransactionCategories.FirstOrDefaultAsync(t => t.Id == id);
         }
 
-        public async Task<List<TransActionCategories>> GetByPartOfNameAsync(string text)
+        public async Task<List<TransactionCategories>> GetByPartOfNameAsync(string text)
         {
             return await _context.TransactionCategories
                          .Where(t=>t.Name.Contains(text, StringComparison.OrdinalIgnoreCase)).ToListAsync();
         }
 
-        public async Task<TransActionCategories> UpdateAsync(TransActionCategories category)
+        public async Task<TransactionCategories> UpdateAsync(TransactionCategories category)
         {
             _context.TransactionCategories.Update(category);
             await _context.SaveChangesAsync();

@@ -9,10 +9,10 @@ namespace Contracts.Repositories
 {
     public interface ITransactionCategoriesRepository
     {
-        Task<List<TransActionCategories>> GetAllAsync();
-        Task<TransActionCategories> GetByIdAsync(int id);
-        Task<List<TransActionCategories>> GetByPartOfNameAsync(string text);
-        Task<TransActionCategories> AddAsync(TransActionCategories category);
-        Task<TransActionCategories> UpdateAsync(TransActionCategories category);
+        Task<List<TransactionCategories>> GetAllAsync();
+        Task<TransactionCategories> GetByIdAsync(int id);
+        Task<List<TransactionCategories>> GetByPartOfNameAsync(string text);
+        Task<TransactionCategories> AddAsync(TransactionCategories category);
+        Task<TransactionCategories> UpdateAsync(TransactionCategories category);
     }
 }

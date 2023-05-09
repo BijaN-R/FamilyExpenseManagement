@@ -1,4 +1,4 @@
-using Application.Services;
+﻿using Application.Services;
 using Contracts.Repositories;
 using Contracts.Services;
 using DataAccess;
@@ -24,12 +24,17 @@ builder.Services.AddDbContext<ExpenseManagerDbContext>(options =>
 
 builder.Services.AddControllers();
 
+//اینجکت ریپازیتوری‌ها
 builder.Services.AddScoped<IFamilyMembersRepository, FamilyMembersRepository>();
 builder.Services.AddScoped<IBankAccountRepository, BankAccountRepository>();
+//اینجکت سرویس‌ها
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IBankAccountService, BankAccountService>();
 
+//اینجکت AutoMapper
 builder.Services.AddAutoMapper(typeof(BankAccountProfile));
+builder.Services.AddAutoMapper(typeof(TransactionCategoryProfile));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

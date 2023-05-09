@@ -12,7 +12,7 @@ namespace Domains
         [Required]
         public string Title { get; set; }
         public string Description { get; set; }
-        public TransActionCategories Category { get; set; }
+        public TransactionCategories Category { get; set; }
         public BankAccounts Account { get; set; }
         public FamilyMembers Transactor { get; set; }
     }
