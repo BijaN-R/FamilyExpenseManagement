@@ -45,7 +45,9 @@ namespace Application.Services
 
         public async Task<BankAccountResponseDto> UpdateAccount(BankAccountDto account)
         {
-            var model = _mapper.Map<BankAccounts>(account);
+            var model = await _repository.GetById(account.Id);
+            _mapper.Map(account,model);
+            model.ModifyDate = DateTime.Now;
             var result = await _repository.UpdateAsync(model);
             return _mapper.Map<BankAccountResponseDto>(result);
         }

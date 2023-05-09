@@ -43,8 +43,20 @@ namespace Application.Services
 
         public async Task<TransactionCategoriesResponseDto> UpdateTransactionCategory(TransactionCategoriesDto model)
         {
-            var response = await _repository.UpdateAsync(_mapper.Map<TransactionCategories>(model));
+            var _model = await _repository.GetByIdAsync(model.Id);
+            if (_model is null) return null;
+            SetDtoToModel(model, _model);
+            var response = await _repository.UpdateAsync(_model);
             return _mapper.Map<TransactionCategoriesResponseDto>(response);
+        }
+
+        private static void SetDtoToModel(TransactionCategoriesDto model, TransactionCategories? _model)
+        {
+            _model.Id = model.Id;
+            _model.TransactionType = model.TransactionType;
+            _model.Name = model.Name;
+            _model.Description = model.Description;
+            _model.ModifyDate = DateTime.Now;
         }
     }
 }

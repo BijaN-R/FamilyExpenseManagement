@@ -27,9 +27,11 @@ builder.Services.AddControllers();
 //اینجکت ریپازیتوری‌ها
 builder.Services.AddScoped<IFamilyMembersRepository, FamilyMembersRepository>();
 builder.Services.AddScoped<IBankAccountRepository, BankAccountRepository>();
+builder.Services.AddScoped<ITransactionCategoriesRepository, TransactionCategoriesRepository>();
 //اینجکت سرویس‌ها
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IBankAccountService, BankAccountService>();
+builder.Services.AddScoped<ITransactionCategoriesService, TransactionCategoriesService>();
 
 //اینجکت AutoMapper
 builder.Services.AddAutoMapper(typeof(BankAccountProfile));

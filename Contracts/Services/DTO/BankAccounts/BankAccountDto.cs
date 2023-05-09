@@ -8,6 +8,7 @@ namespace Contracts.Services.DTO.BankAccounts
 {
     public class BankAccountDto
     {
+        public int Id { get; set; }
         public string BankName { get; set; }
         public string AccountNo { get; set; }
     }
