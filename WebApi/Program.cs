@@ -28,14 +28,17 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IFamilyMembersRepository, FamilyMembersRepository>();
 builder.Services.AddScoped<IBankAccountRepository, BankAccountRepository>();
 builder.Services.AddScoped<ITransactionCategoriesRepository, TransactionCategoriesRepository>();
+builder.Services.AddScoped<ITransactionsRepository, TransactionRepository>();
 //اینجکت سرویس‌ها
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IBankAccountService, BankAccountService>();
 builder.Services.AddScoped<ITransactionCategoriesService, TransactionCategoriesService>();
+builder.Services.AddScoped<ITransactionsService, TransactionService>();
 
 //اینجکت AutoMapper
 builder.Services.AddAutoMapper(typeof(BankAccountProfile));
 builder.Services.AddAutoMapper(typeof(TransactionCategoryProfile));
+builder.Services.AddAutoMapper(typeof(TransactionProfile));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

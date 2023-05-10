@@ -2,8 +2,9 @@
 {
     public class MemberDto
     {
-        public MemberDto(string username, string firstname, string lastname, string email, DateTime birthDate, string relationToHeadOfHousehold, string phoneNo)
+        public MemberDto(int id, string username, string firstname, string lastname, string email, DateTime birthDate, string relationToHeadOfHousehold, string phoneNo)
         {
+            Id = id;
             Username = username;
             Firstname = firstname;
             Lastname = lastname;
@@ -13,6 +14,7 @@
             PhoneNo = phoneNo;
         }
 
+        public int Id { get; set; }
         public string Username { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }

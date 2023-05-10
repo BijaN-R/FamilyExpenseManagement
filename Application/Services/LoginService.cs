@@ -22,7 +22,8 @@ namespace Application.Services
 
             members.ForEach(m =>
                {
-                   result.Add(new MemberDto(m.UserName,
+                   result.Add(new MemberDto(m.Id, 
+                                            m.UserName,
                                             m.FirstName,
                                             m.LastName,
                                             m.Email,
