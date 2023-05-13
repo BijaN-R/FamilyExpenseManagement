@@ -33,7 +33,7 @@ namespace DataAccess.Repositories
         public async Task<List<TransactionCategories>> GetByPartOfNameAsync(string text)
         {
             return await _context.TransactionCategories
-                         .Where(t=>t.Name.Contains(text, StringComparison.OrdinalIgnoreCase)).ToListAsync();
+                         .Where(t=>t.Name.Contains(text)).ToListAsync();
         }
 
         public async Task<TransactionCategories> UpdateAsync(TransactionCategories category)

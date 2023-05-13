@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
+    [ApiController]
+    [Route("[transaction]")]
     public class TransactionController : ControllerBase
     {
         private readonly ITransactionsService _service;
