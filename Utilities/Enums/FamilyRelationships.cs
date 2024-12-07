@@ -34,5 +34,7 @@ namespace Utilities.Enums
         GrandMother = 11,
         [Description("پدربزرگ")]
         GrandFather = 12,
+        [Description("بدون نسبت خانوادگی")]
+        NotRelated = 13,
     }
 }
